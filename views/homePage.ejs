@@ -1,0 +1,33 @@
+<script src="https://kit.fontawesome.com/9774534ce3.js" crossorigin="anonymous"></script>
+
+<form action="/post/createPost" method="post">
+    <label for="content" style="display: block;">Post</label>
+    <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+    <input type="submit">
+</form>
+<br>
+<br>
+
+
+<ul>
+    <% for(postList of postList){ %>
+        <li><%= postList.content %> &nbsp; <a href="/post/deletePost/<%= postList._id %>"><i class="fa-solid fa-trash"></i></a>
+            <br>
+            <br>
+            <form action="/comment/postComment/<%= postList._id %>" method="post">
+                <label for="content">Comment</label>
+                <input type="text" id="content" name="content">
+                <input type="submit">
+            </form>
+            <br>
+            <ul>
+                <% for(commentList of postList.comments){ %>
+                    <li><%= commentList.content %> &nbsp; <a href="/comment/deleteComment/<%= commentList._id %>"><i class="fa-solid fa-trash"></i></a></li>
+                <% } %>
+            </ul>
+        </li>
+        <br>
+        <br>
+        <br>
+    <% } %>
+</ul>

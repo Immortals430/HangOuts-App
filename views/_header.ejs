@@ -1,0 +1,16 @@
+<a href="/"><h1>HangOuts</h1></a>
+
+
+
+<% if(locals.user) { %>
+    <a href="/user/profile"><%= locals.user.username %></a>
+    <a href="/user/logOut">Log Out</a>
+<% } else { %>     
+<a href="/signInPage">Sign In</a>
+<a href="/signUpPage">Sign Up</a>
+<% } %>
+
+
+<br><br>
+
+

@@ -1,0 +1,15 @@
+
+<img src="<%= userList.avatar %>" alt="" width="150">
+<br>
+<br>
+
+<form action="/user/updateUser" method="post" enctype="multipart/form-data">
+    <label for="username">username</label>
+    <input type="text" name="username" id="username">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email">
+    <label for="avatar">Profile Picture</label>
+    <input type="file" name="avatar" id="avatar">
+    <input type="submit">
+</form>
+
